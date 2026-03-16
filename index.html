@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Happy Birthday, You Cutie 🍰</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;700;800&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+
+    <!-- GLOBAL FLOATING DECORATIONS -->
+    <div class="bg-floaties" aria-hidden="true">
+      <span class="floaty f1">🦋</span>
+      <span class="floaty f2">🌷</span>
+      <span class="floaty f3">🫧</span>
+      <span class="floaty f4">🌟</span>
+      <span class="floaty f5">🪷</span>
+      <span class="floaty f6">🍓</span>
+      <span class="floaty f7">🦋</span>
+      <span class="floaty f8">🌙</span>
+      <span class="floaty f9">🫧</span>
+      <span class="floaty f10">🌷</span>
+      <span class="floaty f11">🌟</span>
+      <span class="floaty f12">🪷</span>
+    </div>
+
+    <!-- SCATTERED WEBP STICKERS -->
+    <div class="webp-stickers" aria-hidden="true">
+      <img class="ws ws1"  src="assets/images/happy-birthday.webp" alt="" />
+      <img class="ws ws2"  src="assets/images/happy-cute.webp" alt="" />
+      <img class="ws ws3"  src="assets/images/happy-birthday.webp" alt="" />
+      <img class="ws ws4"  src="assets/images/lovely-cute.webp" alt="" />
+      <img class="ws ws5"  src="assets/images/06e814df4e4529eda75bec0d98af2e30.gif" alt="" />
+      <img class="ws ws6"  src="assets/images/happy-cute.webp" alt="" />
+      <img class="ws ws7"  src="assets/images/460625e5ac09c459b1d6a8469728e58e.gif" alt="" />
+      <img class="ws ws8"  src="assets/images/3752c2e8d7c9d6d2fd0d37cd6f45758d.gif" alt="" />
+      <img class="ws ws9"  src="assets/images/3752c2e8d7c9d6d2fd0d37cd6f45758d.gif" alt="" />
+      <img class="ws ws10" src="assets/images/0c8ad91e1c3bce47d4113c9bba63c57f.gif" alt="" />
+      <img class="ws ws11" src="assets/images/0c8ad91e1c3bce47d4113c9bba63c57f.gif" alt="" />
+      <img class="ws ws12" src="assets/images/06e814df4e4529eda75bec0d98af2e30.gif" alt="" />
+    </div>
+
+    <!-- Confetti canvas -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- =====================================================
+         SCREEN 0 — CANDLE BLOW LANDING
+         ===================================================== -->
+    <div class="screen" id="screen-candle" data-active="true">
+      <div class="screen-inner candle-inner">
+        <p class="candle-intro">🎂 Make a wish & blow the candle 🎂</p>
+
+        <div class="cake-container">
+          <div class="candle">
+            <div class="flame-wrapper" id="flame-wrapper">
+              <div class="flame"></div>
+              <div class="flame-glow"></div>
+            </div>
+            <div class="candle-body"></div>
+            <div class="candle-stripe"></div>
+          </div>
+          <div class="cake">
+            <div class="cake-top"></div>
+            <div class="cake-mid"></div>
+            <div class="cake-base"></div>
+            <div class="cake-plate"></div>
+          </div>
+          <div class="frosting-drips">
+            <span class="drip d1"></span>
+            <span class="drip d2"></span>
+            <span class="drip d3"></span>
+            <span class="drip d4"></span>
+            <span class="drip d5"></span>
+          </div>
+        </div>
+
+        <!-- <button class="btn-blow" id="btn-blow" onclick="blowCandle()">
+          <span class="blow-icon">💨</span>
+          Blow the Candle!
+        </button> -->
+
+        <p class="candle-hint">tap the candle or blow ✨</p>
+      </div>
+    </div>
+
+    <!-- =====================================================
+         SCREEN 1 — HERO / LANDING
+         ===================================================== -->
+    <div class="screen" id="screen-hero">
+      <div class="screen-inner hero-inner">
+        <div class="ribbon-row" aria-hidden="true">
+          <span>🎀</span><span>🍰</span><span>🎀</span><span>🍰</span><span>🎀</span>
+        </div>
+
+        <p class="eyebrow">✦ a little something for you ✦</p>
+
+        <h1 class="hero-title">
+          Happy Birthday,<br />
+          <span class="gradient-text">You Cutie!</span>
+        </h1>
+
+        <!-- ✏️ REPLACE: swap src with any GIF you love -->
+        <div class="hero-gif-ring">
+          <img src="assets/images/3c333137070fb1a0fa346b0eee0f3084.gif" alt="Birthday celebration gif" loop="infinite" />
+          <div class="ring-glow"></div>
+          <span class="ring-sticker s-tl">🌷</span>
+          <span class="ring-sticker s-tr">🌟</span>
+          <span class="ring-sticker s-bl">🍒</span>
+          <span class="ring-sticker s-br">🪷</span>
+        </div>
+
+        <!-- ✏️ REPLACE: edit this sweet message -->
+        <p class="hero-tagline">
+          Today is all about you — the most wonderful person I know 🌷
+        </p>
+
+        <button class="btn-primary" onclick="goTo('screen-choice')">
+          <span class="btn-icon">🍰</span>
+          Open Your Birthday Surprise
+          <span class="btn-icon">🍰</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- =====================================================
+         SCREEN 2 — CHOICE
+         ===================================================== -->
+    <div class="screen" id="screen-choice">
+      <div class="screen-inner choice-inner">
+        <button class="back-btn" onclick="goTo('screen-hero')" aria-label="Go back">← back</button>
+
+        <p class="eyebrow">✦ your birthday surprise awaits ✦</p>
+        <h2 class="choice-title">What would you like<br />to open first?</h2>
+        <p class="choice-sub">Choose one — you can always come back for the other 🌙</p>
+
+        <div class="choice-cards">
+          <button class="choice-card card-memories" onclick="goTo('screen-memories')">
+            <div class="card-deco-top"><span>🦋</span><span>🌷</span><span>🦋</span></div>
+            <div class="card-icon">🧸</div>
+            <h3>Memories</h3>
+            <p>Memories na gamay lang ahahah</p>
+            <div class="card-cta">Open Memories</div>
+          </button>
+
+          <button class="choice-card card-letter" onclick="goTo('screen-letter')">
+            <div class="card-deco-top"><span>🌟</span><span>🪷</span><span>🌟</span></div>
+            <div class="card-icon">💌</div>
+            <h3>A Birthday Letter</h3>
+            <p>A birthday letter from me to you.</p>
+            <div class="card-cta">Read Letter</div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- =====================================================
+         SCREEN 3A — MEMORIES GALLERY
+         ===================================================== -->
+    <div class="screen" id="screen-memories">
+      <div class="screen-inner memories-inner">
+        <div class="section-topbar">
+          <button class="back-btn" onclick="goTo('screen-choice')" aria-label="Go back">← back</button>
+          <div class="topbar-badge"><span>🧸</span> Memories</div>
+          <div class="topbar-spacer"></div>
+        </div>
+
+        <p class="section-sub">Available Memories here 🌷. Maybe next time daghan na pic mabutang dinhi.</p>
+
+        <div class="gallery-scroll">
+          <div class="gallery-grid">
+            <div class="gallery-item img-item" onclick="openLightbox(this.querySelector('img').src)">
+              <img src="assets/groups/701cb006-c73f-491d-8cb1-7c7195651682.jpg" alt="Memory 1" />
+              <div class="item-label">🌷 Memory #1</div>
+            </div>
+            <div class="gallery-item img-item" onclick="openLightbox(this.querySelector('img').src)">
+              <img src="/assets/groups/17dd3320-18b8-412d-9e1d-1a786707307a.jpg" alt="Memory 2" />
+              <div class="item-label">🦋 Memory #2</div>
+            </div>
+            <div class="gallery-item img-item" onclick="openLightbox(this.querySelector('img').src)">
+              <img src="/assets/groups/8563c9e0-afeb-474b-a7a1-4d0422d5b08d.jpg" alt="Memory 3" />
+              <div class="item-label">🌟 Memory #3</div>
+            </div>
+            <div class="gallery-item img-item" onclick="openLightbox(this.querySelector('img').src)">
+              <img src="/assets/groups/de649cb4-af84-46cb-a909-956111357376.jpg" alt="Memory 4" />
+              <div class="item-label">🍒 Memory #4</div>
+            </div>
+            <div class="gallery-item img-item" onclick="openLightbox(this.querySelector('img').src)">
+              <img src="/assets/groups/fa456220-d18c-489e-90d4-3d474bb847fa.jpg" alt="Memory 5" />
+              <div class="item-label">🎀 Memory #5</div>
+            </div>
+            <div class="gallery-item img-item" onclick="openLightbox(this.querySelector('img').src)">
+              <img src="/assets/groups/e25fdbdf-0840-41ce-831d-ba1360263c33.jpg" alt="Memory 6" />
+              <div class="item-label">🌷 Memory #6</div>
+            </div>
+            <div class="gallery-item img-item" onclick="openLightbox(this.querySelector('img').src)">
+              <img src="/assets/groups/9e43c945-3e75-4959-b90e-dc028d21c8ba.jpg" alt="Memory 7" />
+              <div class="item-label">🦋 Memory #7</div>
+            </div>
+            <div class="gallery-item img-item" onclick="openLightbox(this.querySelector('img').src)">
+              <img src="/assets/groups/aa2444ac-b35e-4a26-8dbe-5ed473a78606.jpg" alt="Memory 8" />
+              <div class="item-label">🌟 Memory #8</div>
+            </div>
+            <div class="gallery-item img-item" onclick="openLightbox(this.querySelector('img').src)">
+              <img src="/assets/groups/a00c2d4c-bd02-412c-8fbe-478d59b79ff3.jpg" alt="Memory 9" />
+              <div class="item-label">🍒 Memory #9</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =====================================================
+         SCREEN 3B — BIRTHDAY LETTER
+         ===================================================== -->
+    <div class="screen" id="screen-letter">
+      <div class="screen-inner letter-inner">
+        <div class="section-topbar">
+          <button class="back-btn" onclick="goTo('screen-choice')" aria-label="Go back">← back</button>
+          <div class="topbar-badge"><span>💌</span> A Birthday Letter</div>
+          <div class="topbar-spacer"></div>
+        </div>
+
+        <p class="section-sub">Written straight from the esophagus 🌷</p>
+
+        <div class="letter-scroll">
+          <div class="letter-card">
+            <div class="letter-ornament top-ornament" aria-hidden="true">
+              <span>🌷</span><span>🌟</span><span>🍰</span><span>🌟</span><span>🌷</span>
+            </div>
+
+            <p class="letter-dear">To the wonderful person,</p>
+            <p>Today is your day. Panlibre, mu-dawat rako gkas. Anw, mag bisaya ug english nalng ko the rest HAHAHA.</p>
+            <p>I hope this birthday feels as special as you are <em>(*ehem* gkas)</em>. I hope your day is filled with all the little things that make your heart smile.</p>
+            <p>You deserve every single beautiful thing that life has to offer. Explore wherever and whatever you desire kay you'll never now what lies ahead until you exprience it, maybe positively or negatively unforgettable memories.</p>
+            <p>Dili magsalig sa decision ng AI. You have the freedom to think, dili kaw alipin kay para musunod ra maem <em>(except sa work. Alipin man tayo ng salapi HAHAHA)</em>.</p>
+            <p>So here's to you — to your laugh that makes everything feel okay, to your kindness and pagka-nonchalant. I made this without thinking too much. Dinalian ra ni na development uban ni angkol claude hehehe. So maybe soon <em>(di ko alam)</em> i'll develop a better website hahaha.</p>
+            <p>The thing you said you won't drink anymore, it'll not come true maemz. Mahitabo pa na sunod na laag nato or ninyo HAHAHHA. Keep drinking, ayg lang panlabay ng balas kay murag maka deposit mig balas pud ani nila dan.</p>
+            <p>Happy Birthday, maemz. More bdays to come. God bless you.</p>
+
+            <p class="letter-sign">
+              Yours truly,<br />
+              <span class="signature">basta ako</span>
+            </p>
+
+            <div class="letter-ornament bottom-ornament" aria-hidden="true">
+              <span>🍒</span><span>🌷</span><span>🦋</span><span>🌷</span><span>🍒</span>
+            </div>
+          </div>
+
+          <div class="letter-gifs">
+            <div class="lgif-item">
+              <img src="assets/images/de1664807056d628d5d6f72f9f5a4dd7.gif" alt="Cute birthday gif" loading="lazy" />
+            </div>
+            <div class="lgif-item">
+              <img src="assets/images/1289fd299db50a613d213d27969eeabf.gif" alt="Birthday happiness gif" loading="lazy" />
+            </div>
+            <div class="lgif-item">
+              <img src="assets/images/8e764e511858c18ee21100bd52cf8770.gif" alt="Confetti birthday gif" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="letter-footer">
+            <span class="beating-heart">💝</span>
+            <p>Hapi borndi</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =====================================================
+         LIGHTBOX MODAL
+         ===================================================== -->
+    <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox(event)">
+      <button class="lightbox-close" onclick="closeLightbox(event)" aria-label="Close">✕</button>
+      <div class="lightbox-content">
+        <img id="lightbox-img" src="" alt="Full size memory" />
+        <button
+          class="lightbox-save-btn"
+          id="lightbox-save"
+          onclick="event.stopPropagation(); saveImage(document.getElementById('lightbox-img').src, 'memory.jpg');"
+        >
+          <img src="assets/icon/save.png" width="20px" height="20px" alt="Save" />
+        </button>
+      </div>
+    </div>
+
+    <!-- =====================================================
+         BACKGROUND MUSIC + SPOTIFY-STYLE PLAYER
+         ✏️ To change the song: edit the src on <audio>.
+         ✏️ To change cover art: edit src on #sp-art-img.
+         ✏️ To change title/artist: edit .sp-title and .sp-artist text.
+         Player slides up automatically after the candle is blown.
+         ===================================================== -->
+    <audio id="bg-music" src="assets/music/bday-song.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
