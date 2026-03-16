@@ -171,7 +171,7 @@ let breathAnalyser = null;
 let breathRafId    = null;
 let breathActive   = false;
 
-const BLOW_THRESHOLD  = 10;   // raise if triggers too easily, lower if too hard
+const BLOW_THRESHOLD  = 8;   // raise if triggers too easily, lower if too hard
 const BLOW_SUSTAIN_MS = 280;  // ms of sustained breath needed
 let   blowSustainStart = null;
 
