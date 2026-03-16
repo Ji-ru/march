@@ -2008,3 +2008,46 @@ img {
     transform: translateY(0);
   }
 }
+
+/* =========================================
+   MOBILE CAKE SCALE
+   ========================================= */
+@media (max-width: 520px) {
+
+  .cake-top {
+    width: 30vw;
+    height: 7vh;
+  }
+
+  .cake-mid {
+    width: 50vw;
+    height: 8vh;
+  }
+
+  .cake-base {
+    width: 70vw;
+    height: 9vh;
+  }
+
+  .cake-plate {
+    width: 90vw;
+    height: 2.5vh;
+  }
+
+  .frosting-drips {
+    width: 30vw;
+    top: 16vh;
+  }
+
+  /* optional: make candle slightly bigger too */
+  .candle-body {
+    height: 10vh;
+  }
+
+  @media (max-width: 520px) {
+  .cake-container {
+    transform: scale(1.0);
+  }
+}
+
+}
